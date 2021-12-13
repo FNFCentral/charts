@@ -31,6 +31,6 @@ spec:
             - name: LDAP_SEARCH_BASE
               value: {{.Values.fnfcentral.ldap.search.base}}
             - name: LDAP_SEARCH_FILTER
-              value: {{.Values.fnfcentral.ldap.serch.filter}}
+              value: {{.Values.fnfcentral.ldap.search.filter}}
             - name: JWT_SECRET
               value: {{.Values.fnfcentral.jwt.secret}}
