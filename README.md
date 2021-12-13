@@ -10,4 +10,4 @@ All files are formatted with Prettier. Just use the VSCode extension if you don'
 
 Run `helm package <package_path>` to package the chart.
 
-Then run `helm repo index docs --url https://fnfcentral.github.com/charts` to set up the index.
+Then run `helm repo index docs --url https://charts.fnfcentral.com` to set up the index.
