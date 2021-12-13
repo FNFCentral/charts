@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fnfcentral-kratos
+spec:
+  replicas: {{.Values.kratos.scale}}
+  selector:
+    matchLabels:
+      app: fnfcentral-kratos
+  template:
+    metadata:
+      labels:
+        app: fnfcentral-kratos
+    spec:
+      containers:
+        - name: kratos
+          image: {{.Values.kratos.image}}:{{.Values.kratos.tag}}
+          command: ["serve"]
+          args: ["--watch-courier", "--config", "/home/ory/kratos.yml"]
+          ports:
+            - containerPort: 4433
+          env:
+            - name: DSN
+              value: postgresql://{{.Values.kratos.database.username}}:{{.Values.kratos.database.password}}@{{.Values.kratos.database.domain}}:{{.Values.kratos.database.port}}/{{.Values.kratos.database.loginDatabase}}?sslmode=allow&schema=api
+            - name: SELFSERVICE_DEFAULT_BROWSER_RETURN_URL
+              value: https://{{.Values.fnfcentral.domain}}/dashboard
+            - name: SELFSERVICE_WHITELISTED_RETURN_URLS
+              value: https://{{.Values.fnfcentral.domain}}
+            - name: SERVE_PUBLIC_BASE_URL
+              value: https://{{.Values.kratos.domain}}
+            - name: COURIER_SMTP_CONNECTION_URI
+              value: smtps://{{.Values.kratos.smtps.username}}:{{.Values.kratos.smtps.password}}@{{.Values.kratos.smtps.domain}}:{{.Values.kratos.smtps.port}}/?skip_ssl_verify=true&legacy_ssl=true
+            - name: COURIER_SMTP_FROM_ADDRESS
+              value: {{.Values.kratos.email.name}}@{{.Values.kratos.email.domain}}
+            - name: SESSION_COOKIE_DOMAIN
+              value: {{.Values.fnfcentral.domain}}

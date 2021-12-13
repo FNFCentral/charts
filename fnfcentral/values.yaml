@@ -2,7 +2,7 @@ fnfcentral:
   scale: 3
   image: "dualvs/fnfcentral"
   tag: "canary"
-  domain: "cluster.fnfcentral.com"
+  domain: "canary.fnfcentral.com"
   sslMode: "self"
   database:
     username: "postgres"
@@ -22,3 +22,24 @@ fnfcentral:
       filter: "(cn={{username}})"
   jwt:
     secret: "superSecretSecret"
+
+kratos:
+  scale: 3
+  image: "dualvs/fnfcentral-kratos"
+  tag: "canary"
+  domain: "user.canary.fnfcentral.com"
+  sslMode: "self"
+  database:
+    username: "postgres"
+    password: "password"
+    domain: "sqldb"
+    port: "5432"
+    loginDatabase: "postgres"
+  smtps:
+    username: "postgres"
+    password: "password"
+    domain: "sqldb"
+    port: "5432"
+  email:
+    name: "no-reply"
+    domain: "canary.fnfcentral.com"

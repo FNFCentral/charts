@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fnfcentral-kratos-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: fnfcentral-ssl-{{.Values.fnfcentral.sslMode}}
+spec:
+  tls:
+    - hosts:
+        - {{.Values.kratos.domain}}
+      secretName: fnfcentral-ssl-secret
+  rules:
+    - host: {{.Values.kratos.domain}}
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: fnfcentral-kratos
+                port:
+                  number: 80
