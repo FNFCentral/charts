@@ -1,9 +1,9 @@
 fnfcentral:
   scale: 3
   image: "dualvs/fnfcentral"
-  tag: "deploy"
+  tag: "canary"
   domain: "cluster.fnfcentral.com"
-  sslMode: "production"
+  sslMode: "self"
   database:
     username: "postgres"
     password: "password"
