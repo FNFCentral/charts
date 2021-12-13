@@ -6,7 +6,7 @@ spec:
   selector:
     app: fnfcentral
   ports:
-    - name: fnfcentralHTTP
+    - name: fnfcentral-http
       protocol: TCP
       port: 80
       targetPort: 3000
