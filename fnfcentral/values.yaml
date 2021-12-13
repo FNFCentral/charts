@@ -3,6 +3,7 @@ fnfcentral:
   image: "dualvs/fnfcentral"
   tag: "deploy"
   domain: "cluster.fnfcentral.com"
+  sslMode: "production"
   database:
     username: "postgres"
     password: "password"
