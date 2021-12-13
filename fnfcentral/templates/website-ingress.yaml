@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fnfcentral-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: fnfcentral-ssl
+spec:
+  tls:
+    - hosts:
+        - {{.Values.fnfcentral.domain}}
+      secretName: fnfcentral-ssl-secret
+  rules:
+    - host: {{.Values.fnfcentral.domain}}
+      http:
+        paths:
+          - path: "/"
+            backend:
+              service:
+                name: fnfcentral
+                port:
+                  number: 80

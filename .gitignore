@@ -1,0 +1,6 @@
+# Mac Stupidity
+.DS_STORE
+
+# Built Images
+*.tgz
+!docs/*.tgz

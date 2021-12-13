@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  FNF Central Chart:
+  - apiVersion: v2
+    created: "2021-12-12T20:34:52.0480897-05:00"
+    description: The Helm Chart For FNF Central
+    digest: e664ccada01553ef823da1743dfd5e4c362b1d6e221eb961fcb1c1de8f8ff1f5
+    name: FNF Central Chart
+    urls:
+    - https://fnfcentral.github.com/charts/FNF%20Central%20Chart-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-12-12T20:34:52.0430674-05:00"

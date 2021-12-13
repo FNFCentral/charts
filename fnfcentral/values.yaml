@@ -1,0 +1,19 @@
+fnfcentral:
+  scale: 3
+  image: "dualvs/fnfcentral"
+  tag: "deploy"
+  domain: "cluster.fnfcentral.com"
+  database:
+    url: "postgresql://postgres:password@sqldb:5432/postgres?sslmode=allow&schema=api"
+  kratos:
+    url: "kratos:4433"
+  ldap:
+    url: "ldap://ldap:389"
+    bind:
+      dn: "cn=admin,dc=fnfcentral,dc=com"
+      pass: "admin_pass"
+    search:
+      base: "dc=fnfcentral,dc=com"
+      filter: "(cn={{username}})"
+  jwt:
+    secret: "superSecretSecret"

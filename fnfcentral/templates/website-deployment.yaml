@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fnfcentral
+spec:
+  replicas: {{.Values.fnfcentral.scale}}
+  selector:
+    matchLabels:
+      app: fnfcentral
+  template:
+    metadata:
+      labels:
+        app: fnfcentral
+    spec:
+      containers:
+        - name: fnfcentral
+          image: {{.Values.fnfcentral.image}}:{{.Values.fnfcentral.tag}}
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DATABASE_URL
+              value: {{.Values.fnfcentral.database.url}}
+            - name: KRATOS_URL
+              value: {{.Values.fnfcentral.kratos.url}}
+            - name: LDAP_URL
+              value: {{.Values.fnfcentral.ldap.url}}
+            - name: LDAP_BIND_DN
+              value: {{.Values.fnfcentral.ldap.bind.dn}}
+            - name: LDAP_BIND_PASS
+              value: {{.Values.fnfcentral.ldap.bind.pass}}
+            - name: LDAP_SEARCH_BASE
+              value: {{.Values.fnfcentral.ldap.search.base}}
+            - name: LDAP_SEARCH_FILTER
+              value: {{.Values.fnfcentral.ldap.serch.filter}}
+            - name: JWT_SECRET
+              value: {{.Values.fnfcentral.jwt.secret}}
