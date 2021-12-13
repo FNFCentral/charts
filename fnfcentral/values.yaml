@@ -4,7 +4,11 @@ fnfcentral:
   tag: "deploy"
   domain: "cluster.fnfcentral.com"
   database:
-    url: "postgresql://postgres:password@sqldb:5432/postgres?sslmode=allow&schema=api"
+    username: "postgres"
+    password: "password"
+    domain: "sqldb"
+    port: "5432"
+    loginDatabase: "postgres"
   kratos:
     url: "kratos:4433"
   ldap:

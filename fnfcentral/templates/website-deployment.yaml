@@ -19,7 +19,7 @@ spec:
             - containerPort: 3000
           env:
             - name: DATABASE_URL
-              value: {{.Values.fnfcentral.database.url}}
+              value: postgresql://{{.Values.fnfcentral.database.username}}:{{.Values.fnfcentral.database.password}}@{{.Values.fnfcentral.database.domain}}:{{.Values.fnfcentral.database.port}}/{{.Values.fnfcentral.database.loginDatabase}}?sslmode=allow&schema=api
             - name: KRATOS_URL
               value: {{.Values.fnfcentral.kratos.url}}
             - name: LDAP_URL
