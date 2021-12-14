@@ -22,4 +22,4 @@ spec:
           args: ["migrate", "--config", "/home/ory/kratos.yml", "sql", "-e", "--yes"]
           env:
             - name: DSN
-              value: postgresql://{{.Values.kratos.database.username}}:{{.Values.kratos.database.password}}@{{.Values.kratos.database.domain}}:{{.Values.kratos.database.port}}/{{.Values.kratos.database.loginDatabase}}?sslmode=allow&schema=api
+              value: postgresql://{{.Values.kratos.database.username}}:{{.Values.kratos.database.password}}@{{.Values.kratos.database.domain}}:{{.Values.kratos.database.port}}/{{.Values.kratos.database.loginDatabase}}?sslmode=allow

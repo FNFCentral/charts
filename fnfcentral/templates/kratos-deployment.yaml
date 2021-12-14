@@ -21,7 +21,7 @@ spec:
             - containerPort: 4433
           env:
             - name: DSN
-              value: postgresql://{{.Values.kratos.database.username}}:{{.Values.kratos.database.password}}@{{.Values.kratos.database.domain}}:{{.Values.kratos.database.port}}/{{.Values.kratos.database.loginDatabase}}?sslmode=allow&schema=api
+              value: postgresql://{{.Values.kratos.database.username}}:{{.Values.kratos.database.password}}@{{.Values.kratos.database.domain}}:{{.Values.kratos.database.port}}/{{.Values.kratos.database.loginDatabase}}?sslmode=allow
             - name: SELFSERVICE_DEFAULT_BROWSER_RETURN_URL
               value: https://{{.Values.fnfcentral.domain}}/dashboard
             - name: SELFSERVICE_WHITELISTED_RETURN_URLS

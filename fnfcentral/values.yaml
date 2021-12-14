@@ -22,7 +22,6 @@ fnfcentral:
       filter: "(cn={{username}})"
   jwt:
     secret: "superSecretSecret"
-
 kratos:
   scale: 3
   image: "dualvs/fnfcentral-kratos"
