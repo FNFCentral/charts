@@ -36,10 +36,10 @@ kratos:
     port: "5432"
     loginDatabase: "postgres"
   smtps:
-    username: "postgres"
+    username: "username"
     password: "password"
-    domain: "sqldb"
-    port: "5432"
+    domain: "smtp"
+    port: "1025"
   email:
     name: "no-reply"
     domain: "canary.fnfcentral.com"
