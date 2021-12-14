@@ -15,7 +15,8 @@ spec:
       containers:
         - name: kratos
           image: {{.Values.kratos.image}}:{{.Values.kratos.tag}}
-          command: ["serve", "--watch-courier", "--config", "/home/ory/kratos.yml"]
+          command: ["kratos"]
+          args: ["serve", "--watch-courier", "--config", "/home/ory/kratos.yml"]
           ports:
             - containerPort: 4433
           env:
