@@ -22,6 +22,8 @@ spec:
           env:
             - name: DSN
               value: postgresql://{{.Values.kratos.database.username}}:{{.Values.kratos.database.password}}@{{.Values.kratos.database.domain}}:{{.Values.kratos.database.port}}/{{.Values.kratos.database.loginDatabase}}?sslmode=allow
+            - name: SERVE_PUBLIC_CORS_ALLOWED_ORIGINS
+              value: https://{{.Values.fnfcentral.domain}}
             - name: SELFSERVICE_DEFAULT_BROWSER_RETURN_URL
               value: https://{{.Values.fnfcentral.domain}}/dashboard
             - name: SELFSERVICE_WHITELISTED_RETURN_URLS
