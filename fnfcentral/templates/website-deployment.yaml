@@ -19,7 +19,10 @@ spec:
             - containerPort: 3000
           env:
             - name: DATABASE_URL
-              value: postgresql://{{.Values.fnfcentral.database.username}}:{{.Values.fnfcentral.database.password}}@{{.Values.fnfcentral.database.domain}}:{{.Values.fnfcentral.database.port}}/{{.Values.fnfcentral.database.loginDatabase}}?sslmode=allow&schema=api
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-secret-data
+                  key: FNFCentral-DATABASE_URL
             - name: KRATOS_URL
               value: {{.Values.fnfcentral.kratos.url}}
             - name: LDAP_URL
@@ -27,10 +30,16 @@ spec:
             - name: LDAP_BIND_DN
               value: {{.Values.fnfcentral.ldap.bind.dn}}
             - name: LDAP_BIND_PASS
-              value: {{.Values.fnfcentral.ldap.bind.pass}}
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-secret-data
+                  key: FNFCentral-LDAP_BIND_PASS
             - name: LDAP_SEARCH_BASE
               value: {{.Values.fnfcentral.ldap.search.base}}
             - name: LDAP_SEARCH_FILTER
               value: {{.Values.fnfcentral.ldap.search.filter}}
             - name: JWT_SECRET
-              value: {{.Values.fnfcentral.jwt.secret}}
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-secret-data
+                  key: FNFCentral-JWT_SECRET
