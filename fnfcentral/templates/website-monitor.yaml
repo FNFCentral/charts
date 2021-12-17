@@ -1,0 +1,10 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fnfcentral-servicemonitor
+spec:
+  endpoints:
+    - port: fnfcentral-http
+  selector:
+    matchLabels:
+      app: fnfcentral

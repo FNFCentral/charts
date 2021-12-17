@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: fnfcentral-kratos-servicemonitor
+spec:
+  endpoints:
+    - port: fnfcentral-kratos-http
+      path: /metrics/prometheus
+  selector:
+    matchLabels:
+      app: fnfcentral-kratos
