@@ -14,7 +14,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: fnfcentral-migration
-          image: {{.Values.fnfcentral.image}}:{{.Values.fnfcentral.tag}}
+          image: {{.Values.fnfcentral.image}}:{{.Chart.Version}}
           command: ["npx"]
           args: ["prisma", "migrate", "deploy"]
           env:
@@ -24,7 +24,7 @@ spec:
                   name: fnfcentral-secret-data
                   key: FNFCentral-DATABASE_URL
         - name: fnfcentral-kratos-migration
-          image: {{.Values.kratos.image}}:{{.Values.kratos.tag}}
+          image: {{.Values.kratos.image}}:{{.Chart.Version}}
           command: ["kratos"]
           args: ["migrate", "--config", "/home/ory/kratos.yml", "sql", "-e", "--yes"]
           env:
