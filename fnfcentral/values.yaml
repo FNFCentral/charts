@@ -1,7 +1,6 @@
 fnfcentral:
   scale: 3
   image: "dualvs/fnfcentral"
-  tag: "canary"
   domain: "canary.fnfcentral.com"
   sslMode: "self"
   database:
@@ -25,7 +24,6 @@ fnfcentral:
 kratos:
   scale: 3
   image: "dualvs/fnfcentral-kratos"
-  tag: "canary"
   domain: "user.canary.fnfcentral.com"
   sslMode: "self"
   database:

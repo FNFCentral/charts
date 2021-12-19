@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fnfcentral
-          image: {{.Values.fnfcentral.image}}:{{.Values.fnfcentral.tag}}
+          image: {{.Values.fnfcentral.image}}:{{.Chart.Version}}
           ports:
             - containerPort: 3000
           env:

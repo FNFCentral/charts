@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: kratos
-          image: {{.Values.kratos.image}}:{{.Values.kratos.tag}}
+          image: {{.Values.kratos.image}}:{{.Chart.Version}}
           command: ["kratos"]
           args: ["serve", "--watch-courier", "--config", "/home/ory/kratos.yml"]
           ports:
@@ -28,6 +28,8 @@ spec:
             - name: SERVE_PUBLIC_CORS_ALLOWED_ORIGINS
               value: https://{{.Values.fnfcentral.domain}}
             - name: SELFSERVICE_DEFAULT_BROWSER_RETURN_URL
+              value: https://{{.Values.fnfcentral.domain}}/dashboard
+            - name: SELFSERVICE_FLOWS_VERIFICATION_UI_URL
               value: https://{{.Values.fnfcentral.domain}}/dashboard
             - name: SELFSERVICE_WHITELISTED_RETURN_URLS
               value: https://{{.Values.fnfcentral.domain}}
