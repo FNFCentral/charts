@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - {{.Values.kratos.domain}}
-      secretName: fnfcentral-ssl-secret
+      secretName: fnfcentral-kratos-ssl-secret
   rules:
     - host: {{.Values.kratos.domain}}
       http:

@@ -7,7 +7,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: joseph@dualvs.com
     privateKeySecretRef:
-      name: fnfcentral-ssl-secret
+      name: fnfcentral-ssl-production-key
     solvers:
       - http01:
           ingress:
