@@ -44,3 +44,18 @@ spec:
               value: {{.Values.kratos.email.name}}@{{.Values.kratos.email.domain}}
             - name: SESSION_COOKIE_DOMAIN
               value: {{.Values.fnfcentral.domain}}
+            - name: SECRETS_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-kratos-secret-data
+                  key: SECRETS_DEFAULT
+            - name: SECRETS_CIPHER
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-kratos-secret-data
+                  key: SECRETS_CIPHER
+            - name: SECRETS_COOKIE
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-kratos-secret-data
+                  key: SECRETS_COOKIE

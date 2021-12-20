@@ -33,3 +33,18 @@ spec:
                 secretKeyRef:
                   name: fnfcentral-secret-data
                   key: Kratos-DSN
+            - name: SECRETS_DEFAULT
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-kratos-secret-data
+                  key: SECRETS_DEFAULT
+            - name: SECRETS_CIPHER
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-kratos-secret-data
+                  key: SECRETS_CIPHER
+            - name: SECRETS_COOKIE
+              valueFrom:
+                secretKeyRef:
+                  name: fnfcentral-kratos-secret-data
+                  key: SECRETS_COOKIE
