@@ -8,6 +8,6 @@ All files are formatted with Prettier. Just use the VSCode extension if you don'
 
 ## Getting Everything Working
 
-Run `helm package <package_path>` to package the chart.
+Run `helm package <package_path>` to package the chart. Move that package into the `docs` directory.
 
 Then run `helm repo index docs --url https://charts.fnfcentral.com` to set up the index.
