@@ -2,6 +2,14 @@ apiVersion: v1
 entries:
   FNF-Central-Chart:
   - apiVersion: v2
+    created: "2021-12-20T10:30:34.6938732-05:00"
+    description: The Helm Chart For FNF Central
+    digest: e9d2aa555f06772e28d3a6d503384974f518d3c8dcd4d2cd8759584f139776f9
+    name: FNF-Central-Chart
+    urls:
+    - https://charts.fnfcentral.com/FNF-Central-Chart-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2021-12-20T08:48:49.4423146-05:00"
     description: The Helm Chart For FNF Central
     digest: 3a37ccb617f5bf2041742f33b384de58ba209d6820bb65f00e7a6e16a39b3aac
@@ -25,4 +33,4 @@ entries:
     urls:
     - https://charts.fnfcentral.com/FNF-Central-Chart-0.0.1.tgz
     version: 0.0.1
-generated: "2021-12-20T08:48:49.419452-05:00"
+generated: "2021-12-20T10:30:34.6729463-05:00"
