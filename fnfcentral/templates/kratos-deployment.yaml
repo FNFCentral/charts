@@ -31,6 +31,10 @@ spec:
               value: https://{{.Values.fnfcentral.domain}}/dashboard
             - name: SELFSERVICE_FLOWS_VERIFICATION_UI_URL
               value: https://{{.Values.fnfcentral.domain}}/dashboard
+            - name: SELFSERVICE_FLOWS_RECOVERY_UI_URL
+              value: https://{{.Values.fnfcentral.domain}}/recover
+            - name: SELFSERVICE_FLOWS_SETTINGS_UI_URL
+              value: https://{{.Values.fnfcentral.domain}}/recover
             - name: SELFSERVICE_WHITELISTED_RETURN_URLS
               value: https://{{.Values.fnfcentral.domain}}
             - name: SERVE_PUBLIC_BASE_URL
