@@ -4,6 +4,11 @@ metadata:
   name: fnfcentral-kratos
 spec:
   replicas: {{.Values.kratos.scale}}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
   selector:
     matchLabels:
       app: fnfcentral-kratos
